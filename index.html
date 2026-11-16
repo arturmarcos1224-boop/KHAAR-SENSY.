@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔥 SENSI ABSURDA PRO — ZXKO EDITION 🔥</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { 
+                        escuro:'#0F0F13', 
+                        preto:'#000000', 
+                        laranja:'#FF9500', 
+                        vermelho:'#FF0000', 
+                        dourado:'#FFCC00', 
+                        neon:'#FF0066', 
+                        gold:'#ffd700',
+                        absurda:'#FF3D00',
+                        realpro:'#00E5FF',
+                        compara:'#7B61FF'
+                    },
+                    fontFamily: { tech:['Orbitron','sans-serif'] },
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background:#000; font-family:'Orbitron',sans-serif; }
+        .text-glow { text-shadow:0 0 10px currentColor; }
+        .fogo { background:linear-gradient(45deg,#ff0000,#ff6600,#ffff00,#ff6600,#ff0000); background-size:400% 400%; animation:fogo 1.5s linear infinite; }
+        @keyframes fogo { 0%{background-position:0% 50%;} 50%{background-position:100% 50%;} 100%{background-position:0% 50%;} }
+        .pulse-glow { animation:pulse-glow 1s ease-in-out infinite alternate; }
+        @keyframes pulse-glow { from { box-shadow:0 0 10px #ff0000, 0 0 20px #ff6600; } to { box-shadow:0 0 25px #ff0000, 0 0 40px #ff6600, 0 0 60px #ffff00; } }
+        .realpro-glow { box-shadow:0 0 12px #00E5FF, inset 0 0 4px #00E5FF30; }
+        .barra-compare { transition: width 0.6s ease-out; }
+        .diferenca-positiva { color: #00FF88; }
+        .diferenca-negativa { color: #FF6B6B; }
+    </style>
+</head>
+<body class="min-h-screen text-white">
+
+<!-- TELA DE LOGIN -->
+<div id="telaLogin" class="fixed inset-0 bg-black/98 flex items-center justify-center p-4 z-50">
+    <div class="w-full max-w-md">
+        <h1 class="text-4xl font-black text-center text-absurda mb-1 text-glow">🔥 SENSI ABSURDA PRO 🔥</h1>
+        <p class="text-center text-dourado text-sm mb-2 font-semibold">ZXKO EDITION</p>
+        <div class="text-center text-xs text-gray-500 mb-6 space-y-1">
+            <p>.sensi ajustada</p>
+            <p>.calibrada</p>
+            <p>.perfeita</p>
+            <p>.absurda</p>
+        </div>
+        
+        <div class="bg-gray-900/90 p-6 rounded-xl border border-absurda/60 pulse-glow">
+            <p class="text-center text-sm mb-3 text-dourado">Digite a senha de acesso:</p>
+            <input type="password" id="senha" placeholder="••••" 
+                class="w-full h-12 bg-black/60 border border-absurda/50 rounded-lg px-4 text-center text-lg mb-4 outline-none text-white focus:border-dourado transition-colors">
+            <button onclick="entrar()" class="w-full h-12 fogo rounded-lg font-bold text-black tracking-wider">
+                <i class="fa-solid fa-lock-open mr-2"></i> ENTRAR
+            </button>
+            <p id="erro" class="text-red-500 text-center text-sm mt-3 hidden">⚠️ Senha incorreta — tente novamente</p>
+        </div>
+    </div>
+</div>
+
+<!-- CONTEÚDO PRINCIPAL -->
+<div id="conteudo" class="container mx-auto px-4 py-6 max-w-md hidden">
+    <h2 class="text-lg font-bold text-center text-absurda mb-1 text-glow">✅ SISTEMA ATIVO</h2>
+    <p class="text-center text-realpro text-xs mb-6">COMPARAÇÃO COM REAL SENSI PRO — SEM BOTÃO EXIBIDO</p>
+
+    <div class="space-y-4 mb-6">
+        <div>
+            <label class="block text-sm text-gray-300 mb-1 font-medium">📱 Marca do Celular</label>
+            <input type="text" id="marca" placeholder="Samsung, Xiaomi, Motorola..." 
+                class="w-full h-12 bg-gray-900/60 border border-gray-700 rounded-lg px-4 outline-none focus:border-dourado transition-colors">
+        </div>
+        <div>
+            <label class="block text-sm text-gray-300 mb-1 font-medium">🔢 Modelo</label>
+            <input type="text" id="modelo" placeholder="A03, Moto G20, Redmi 12..." 
+                class="w-full h-12 bg-gray-900/60 border border-gray-700 rounded-lg px-4 outline-none focus:border-dourado transition-colors">
+        </div>
+        <div>
+            <label class="block text-sm text-gray-300 mb-1 font-medium">🔋 DPI do Sistema</label>
+            <input type="number" id="dpi" placeholder="411 — 500 — 550..." 
+                class="w-full h-12 bg-gray-900/60 border border-gray-700 rounded-lg px-4 outline-none focus:border-dourado transition-colors">
+        </div>
+    </div>
+
+    <div class="grid grid-cols-2 gap-4 mb-6">
+        <div>
+            <label class="block text-sm text-gray-300 mb-1 font-medium">🎯 Força</label>
+            <select id="forca" class="w-full h-12 bg-gray-900/60 border border-gray-700 rounded-lg px-4 outline-none focus:border-dourado transition-colors">
+                <option>EQUILIBRADA</option>
+                <option>AGRESSIVA</option>
+                <option selected>ABSURDA</option>
+                <option>ULTRA ALTA</option>
+            </select>
+        </div>
+        <div>
+            <label class="block text-sm text-gray-300 mb-1 font-medium">⚡ Estilo</label>
+            <select id="estilo" class="w-full h-12 bg-gray-900/60 border border-gray-700 rounded-lg px-4 outline-none focus:border-dourado transition-colors">
+                <option>PRECISÃO TOTAL</option>
+                <option selected>CABEÇA DIRETA</option>
+                <option>CAPA RÁPIDA</option>
+                <option>ULTRA RÁPIDA</option>
+            </select>
+        </div>
+    </div>
+
+    <button onclick="gerarSensi()" class="w-full h-16 fogo rounded-lg font-bold text-xl text-black mb-6 pulse-glow tracking-wider">
+        🔥 GERAR SENSI ABSURDA 🔥
+    </button>
+
+    <!-- BARRA DE CALIBRAÇÃO -->
+    <div id="loader" class="hidden mb-6">
+        <p class="text-center text-dourado mb-2 font-medium text-sm" id="status">COMPARANDO COM REAL SENSI PRO...</p>
+        <div class="w-full h-3 bg-gray-800 rounded-full overflow-hidden border border-gray-700">
+            <div id="barra" class="h-full fogo w-0 transition-all duration-100 ease-linear"></div>
+        </div>
+        <p class="text-center text-gray-400 text-xs mt-1" id="porcento">0%</p>
+    </div>
+
+    <!-- RESULTADO + COMPARAÇÃO -->
+    <div id="resultado" class="hidden space-y-5">
+        <!-- SENSI GERADA -->
+        <div class="bg-gray-900/90 border-2 border-dourado/70 rounded-xl p-5">
+            <h3 class="text-lg font-black text-center text-dourado mb-4 text-glow">✅ SENSI ABSURDA — ZXKO</h3>
+            
+            <div class="space-y-4 text-sm">
+                <div class="flex justify-between items-center py-2 border-b border-gray-800">
+                    <span class="text-gray-300">🔫 GERAL</span>
+                    <span class="font-black text-dourado text-xl" id="valGeral">—</span>
+                </div>
+                <div class="flex justify-between items-center py-2 border-b border-gray-800">
+                    <span class="text-gray-300">🎯 PONTO VERMELHO</span>
+                    <span class="font-black text-dourado text-xl" id="valPonto">—</span>
+                </div>
+                <div class="flex justify-between items-center py-2 border-b border-gray-800">
+                    <span class="text-gray-300">🔭 MIRA 2x</span>
+                    <span class="font-black text-dourado text-xl" id="val2x">—</span>
+                </div>
+                <div class="flex justify-between items-center py-2 border-b border-gray-800">
+                    <span class="text-gray-300">🔭 MIRA 4x</span>
+                    <span class="font-black text-dourado text-xl" id="val4x">—</span>
+                </div>
+                <div class="flex justify-between items-center py-2 border-b border-gray-800">
+                    <span class="text-gray-300">🎯 SNIPER</span>
+                    <span class="font-black text-dourado text-xl" id="valSniper">—</span>
+                </div>
+                <div class="flex justify-between items-center py-2">
+                    <span class="text-gray-300">👀 CÂMERA</span>
+                    <span class="font-black text-dourado text-xl" id="valCamera">—</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- COMPARAÇÃO COM REAL SENSI PRO -->
+        <div class="bg-gray-900/90 border-2 border-realpro/60 rounded-xl p-5 realpro-glow">
+            <h3 class="text-base font-black text-center text-realpro mb-4">📊 COMPARAÇÃO — REAL SENSI PRO</h3>
+            
+            <div class="space-y-3 text-xs">
+                <div class="py-1">
+                    <div class="flex justify-between mb-1">
+                        <span class="text-gray-400">GERAL</span>
+                        <span><span class="text-dourado font-bold" id="cmpGeralAtual">—</span> vs <span class="text-realpro font-bold" id="cmpGeralPro">—</span></span>
+                    </div>
+                    <div class="flex gap-1 h-2">
+                        <div class="bg-dourado/60 rounded-l-full barra-compare" id="barraGeralAtual" style="width:0%"></div>
+                        <div class="bg-realpro/60 rounded-r-full barra-compare" id="barraGeralPro" style="width:0%"></div>
+                    </div>
+                    <p class="text-right mt-1" id="difGeral">—</p>
+                </div>
+                <div class="py-1">
+                    <div class="flex justify-between mb-1">
+                        <span class="text-gray-400">PONTO VERMELHO</span>
+                        <span><span class="text-dourado font-bold" id="cmpPontoAtual">—</span> vs <span class="text-realpro font-bold" id="cmpPontoPro">—</span></span>
+                    </div>
+                    <div class="flex gap-1 h-2">
+                        <div class="bg-dourado/60 rounded-l-full barra-compare" id="barraPontoAtual" style="width:0%"></div>
+                        <div class="bg-realpro/60 rounded-r-full barra-compare" id="barraPontoPro" style="width:0%"></div>
+                    </div>
+                    <p class="text-right mt-1" id="difPonto">—</p>
+                </div>
+                <div class="py-1">
+                    <div class="flex justify-between mb-1">
+                        <span class="text-gray-400">MIRA 2x</span>
+                        <span><span class="text-dourado font-bold" id="cmp2xAtual">—</span> vs <span class="text-realpro font-bold" id="cmp2xPro">—</span></span>
+                    </div>
+                    <div class="flex gap-1 h-2">
+                        <div class="bg-dourado/60 rounded-l-full barra-compare" id="barra2xAtual" style="width:0%"></div>
+                        <div class="bg-realpro/60 rounded-r-full barra-compare" id="barra2xPro" style="width:0%"></div>
+                    </div>
+                    <p class="text-right mt-1" id="dif2x">—</p>
+                </div>
+                <div class="py-1">
+                    <div class="flex justify-between mb-1">
+                        <span class="text-gray-400">MIRA 4x</span>
+                        <span><span class="text-dourado font-bold" id="cmp4xAtual">—</span> vs <span class="text-realpro font-bold" id="cmp4xPro">—</span></span>
+                    </div>
+                    <div class="flex gap-1 h-2">
+                        <div class="bg-dourado/60 rounded-l-full barra-compare" id="barra4xAtual" style="width:0%"></div>
+                        <div class="bg-realpro/60 rounded-r-full barra-compare" id="barra4xPro" style="width:0%"></div>
+                    </div>
+                    <p class="text-right mt-1" id="dif4x">—</p>
+                </div>
+                <div class="py-1">
+                    <div class="flex justify-between mb-1">
+                        <span class="text-gray-400">SNIPER</span>
+                        <span><span class="text-dourado font-bold" id="cmpSniperAtual">—</span> vs <span class="text-realpro font-bold" id="cmpSniperPro">—</span></span>
+                    </div>
+                    <div class="flex gap-1 h-2">
+                        <div class="bg-dourado/60 rounded-l-full barra-compare" id="barraSniperAtual" style="width:0%"></div>
+                        <div class="bg-realpro/60 rounded-r-full barra-compare" id="barraSniperPro" style="width:0%"></div>
+                    </div>
+                    <p class="text-right mt-1" id="difSniper">—</p>
+                </div>
+            </div>
+            
+            <div class="mt-4 p-3 bg-compara/10 rounded-lg border border-compara/30">
+                <p class="text-compara text-xs text-center font-semibold">
+                    ⚙️ DPI UTILIZADO: <span id="resDpi" class="text-white font-bold">—</span>
+                    <span class="mx-2">|</span>
+                    📊 ALINHAMENTO: <span id="alinhamento" class="text-realpro font-bold">—</span>
+                </p>
+            </div>
+        </div>
+        
+        <p class="text-center text-xs text-gray-500 mb-6">⚠️ Sem botão exibido — ajuste conforme seu toque em treino</p>
+    </div>
+</div>
+
+<script>
+function entrar() {
+    const s = document.getElementById('senha').value.trim();
+    if(s === 'zxko') {
+        document.getElementById('telaLogin').classList.add('hidden');
+        document.getElementById('conteudo').classList.remove('hidden');
+    } else {
+        document.getElementById('erro').classList.remove('hidden');
+    }
+}
+
+function limitar(valor, min, max) {
+    return Math.max(min, Math.min(max, Math.round(valor)));
+}
+
+// Valores de referência do Real Sensi Pro (base de comparação)
+const RealSensiPro = {
+    geral: 182,
+    ponto: 178,
+    m2: 172,
+    m4: 165,
+    sniper: 145,
+    camera: 188
+};
+
+function calcularBase(forca) {
+    const bases = {
+        'EQUILIBRADA': { geral: 160, ponto: 155, m2: 150, m4: 145, sniper: 130, camera: 165 },
+        'AGRESSIVA': { geral: 185, ponto: 180, m2: 174, m4: 168, sniper: 145, camera: 190 },
+        'ABSURDA': { geral: 198, ponto: 195, m2: 190, m4: 185, sniper: 160, camera: 200 },
+        'ULTRA ALTA': { geral: 200, ponto: 200, m2: 198, m4: 195, sniper: 170, camera: 200 }
+    };
+    return bases[forca] || bases['ABSURDA'];
+}
+
+function aplicarEstilo(base, estilo) {
+    const b = { ...base };
+    if(estilo.includes('CABEÇA')) {
+        b.ponto += 6;
+        b.m2 += 4;
+        b.m4 += 2;
+    }
+    if(estilo.includes('CAPA')) {
+        b.geral += 7;
+        b.camera += 5;
+    }
+    if(estilo.includes('ULTRA')) {
+        b.geral += 5;
+        b.ponto
